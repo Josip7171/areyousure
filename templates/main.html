@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AreYouSure</title>
+</head>
+<body>
+    <h1>Are You Sure?</h1>
+    <br>
+    <form method="POST" action="{{ url_for('response') }}">
+        <p>Message body: </p>
+        <textarea rows="5" cols="30" name="message" placeholder="Enter message here ..."></textarea>
+        <p>Recipient: </p>
+        <input type="email" name="recipient" placeholder="name@domain.com" required>
+        <p>Mail for report (not required): </p>
+        <input type="email" name="sender" placeholder="name@domain.com">
+        <p>Sending time: </p>
+        <input type="date" name="sendingDate" >
+        <input type="time" name="sendingTime" >
+
+        <br><br>
+        <input type="submit" value="Send">
+    </form>
+
+    <br><br>
+    {% if message %}
+        {{ message }}
+    {% endif %}
+
+</body>
+</html>
